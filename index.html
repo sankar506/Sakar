@@ -1,0 +1,213 @@
+lHere is your updated HTML code with the requested changes:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Portfolio</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #87CEEB, #1E90FF); /* Sky Blue Gradient */
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: gold;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+            text-shadow: 0 0 10px gold;
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+            padding: 100px 20px;
+            min-height: 100vh;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Profile Image */
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 20px auto;
+            border: 3px solid gold;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+        }
+
+        /* Sections Styling */
+        h1 {
+            font-size: 28px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: gold;
+            text-decoration: underline; /* Golden underline for section titles */
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8; /* Added spacing */
+            max-width: 80%;
+            margin: 10px auto;
+        }
+
+        /* Resume Button */
+        .resume-btn {
+            background: gold;
+            padding: 10px 20px;
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .resume-btn:hover {
+            background: #ffcc00;
+            box-shadow: 0 0 10px gold;
+        }
+
+        /* Animation for Sections */
+        .fade-in {
+            animation: fadeInUp 0.8s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('skills')">Skills</a>
+        <a href="#" onclick="showSection('projects')">Projects</a>
+        <a href="#" onclick="showSection('achievements')">Achievements</a>
+        <a href="#" onclick="showSection('resume')">Resume</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home" class="section active fade-in">
+        <img src="profile.jpg" alt="Profile" class="profile-pic">
+        <h1>SHANKER</h1>
+        <p>Aspiring Full-Stack Developer | Passionate about Technology</p>
+        <h2>About Me</h2>
+        <p>I am a second-year BSc IT student passionate about full-stack development. Currently enhancing my skills in web and software development while preparing for real-world projects.</p>
+    </div>
+
+    <!-- Skills Section -->
+    <div id="skills" class="section fade-in">
+        <h2>Skills</h2>
+        <p>✔ Programming: C, C++, Java</p>
+        <p>✔ Front-End Web Development</p>
+        <p>✔ Linux Basics</p>
+        <p>✔ Effective use of AI tools</p>
+        <p>✔ English & Tamil Communication</p>
+        <p>✔ Adaptability & Problem-Solving</p>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="section fade-in">
+        <h2>Projects</h2>
+        <p>✔ Completed: Digital Portfolio (This Website)</p>
+        <p>✔ Planned Projects:</p>
+        <p>- Dress Shop Management – Shirt order system</p>
+        <p>- Women Safety App – Emergency safety assistance</p>
+    </div>
+
+    <!-- Achievements Section -->
+    <div id="achievements" class="section fade-in">
+        <h2>Certifications & Achievements</h2>
+        <p>✔ IBM Certified Cloud Course</p>
+        <p>✔ Completed Front-end Web Development Course</p>
+        <p>✔ Presented at National AI PPT Conference</p>
+    </div>
+
+    <!-- Resume Section -->
+    <div id="resume" class="section fade-in">
+        <h2>Resume</h2>
+        <a href="resume.pdf" class="resume-btn" download>Download My Resume (PDF)</a>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="section fade-in">
+        <h2>Contact</h2>
+        <p>Email: mrdhamo395@gmail.com</p>
+        <p>Phone: 9489568506</p>
+    </div>
+
+    <!-- JavaScript for Navigation -->
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
+
+All requested updates have been applied. Let me know if you need any further modifications!
